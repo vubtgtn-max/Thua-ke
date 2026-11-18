@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Nhập hồ sơ thừa kế – Lãnh Ngọc</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#f4f1e8;--card:#fffdf7;--ink:#1f2a24;--mute:#6b7468;--line:#d9d4c3;--acc:#1f5c4a;--acc2:#e8f1ec;--warn:#a4452c;--in:#fff;--onacc:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151a17;--card:#1d2420;--ink:#e9eee8;--mute:#9aa596;--line:#34403a;--acc:#6fc3a3;--acc2:#23312b;--warn:#ef9a82;--in:#151a17;--onacc:#10201a}}
+:root[data-theme="dark"]{--bg:#151a17;--card:#1d2420;--ink:#e9eee8;--mute:#9aa596;--line:#34403a;--acc:#6fc3a3;--acc2:#23312b;--warn:#ef9a82;--in:#151a17;--onacc:#10201a}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:clamp(14px,.9vw + 8px,16px)/1.5 "Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid;grid-template-columns:clamp(220px,18vw,300px) minmax(0,1fr);min-height:100vh}
+aside{border-right:1px solid var(--line);padding:16px;background:var(--card);position:sticky;top:0;height:100vh;overflow:auto}
+aside h2{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:18px 0 8px}
+.brand{font-weight:700;font-size:1.15em;color:var(--acc);line-height:1.25}
+.brand small{display:block;font-weight:500;color:var(--mute);font-size:.75em;margin-top:2px}
+button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:8px 12px}
+button:hover{border-color:var(--acc)}
+.pri{background:var(--acc);color:var(--onacc);border-color:var(--acc);font-weight:600}
+.full{width:100%}
+.rec{display:block;width:100%;text-align:left;margin-bottom:6px;padding:9px 10px}
+.rec.on{border-color:var(--acc);background:var(--acc2)}
+.rec b{display:block;font-size:.9em}.rec span{font-size:.75em;color:var(--mute)}
+.rec .x{float:right;color:var(--warn)}
+main{padding:0 clamp(12px,2.5vw,48px) 80px;min-width:0}
+.top{display:flex;gap:10px;align-items:end;flex-wrap:wrap;position:sticky;top:0;background:var(--bg);padding:12px 0;z-index:5;border-bottom:1px solid var(--line);margin-bottom:16px}
+.top .f{flex:1;min-width:240px}
+.stat{font-size:.8em;color:var(--mute);align-self:center}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px clamp(12px,1.6vw,26px);margin-bottom:16px}
+section h3{margin:0 0 2px;font-size:1.1em;display:flex;gap:10px;align-items:center}
+.n{width:26px;height:26px;border-radius:50%;background:var(--acc);color:var(--onacc);display:inline-grid;place-items:center;font-size:.8em;flex:none}
+.docs{font-size:.78em;color:var(--mute);margin:0 0 12px 36px}
+.docs i{font-style:normal;background:var(--acc2);color:var(--acc);padding:1px 8px;border-radius:99px;margin-right:4px;white-space:nowrap;display:inline-block;margin-bottom:3px}
+.g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:10px 14px}
+.f{display:flex;flex-direction:column;gap:3px;grid-column:span 3;min-width:0}
+.f.w2{grid-column:span 6}.f.w4{grid-column:span 12}
+@media (max-width:1200px){.f{grid-column:span 4}.f.w2{grid-column:span 8}}
+@media (max-width:760px){.f{grid-column:span 6}.f.w2{grid-column:span 12}.app{grid-template-columns:1fr}aside{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}}
+@media (max-width:480px){.f{grid-column:span 12}}
+.f>span{font-size:.8em;font-weight:600;color:var(--mute)}
+input,select,textarea{font:inherit;width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--in);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--acc);outline-offset:-1px}
+.f input+input,.f select+input,.f select+.vn{margin-top:4px}
+textarea{min-height:60px;resize:vertical}
+.hint{font-size:.78em;color:var(--mute)}
+.ask{margin-top:6px;padding:8px;border-radius:8px;background:var(--acc2);font-size:.85em;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.ask button{padding:3px 10px;font-size:.9em}
+.item{border:1px dashed var(--line);border-radius:10px;padding:12px;margin-bottom:10px;background:color-mix(in srgb,var(--acc2) 40%,transparent)}
+.item>header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:600;color:var(--acc)}
+.item>header button{font-size:.8em;padding:3px 9px;color:var(--warn)}
+.chk{display:flex;flex-wrap:wrap;gap:8px}
+.chk label{display:flex;gap:6px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:var(--in);cursor:pointer}
+.chk input{width:auto}
+.ex{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.ex button{text-align:left;padding:12px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.guide{background:var(--acc2);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin-bottom:16px}
+.guide summary{cursor:pointer;font-weight:600;color:var(--acc)}
+.guide ol{margin:8px 0 4px;padding-left:20px}.guide li{margin-bottom:4px}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+<div class="app">
+<aside>
+  <div class="brand">Hồ sơ thừa kế<small>UBND xã Lãnh Ngọc · Địa chính</small></div>
+  <button class="pri full" id="new" style="margin-top:14px">＋ Hồ sơ mới</button>
+  <h2>Hồ sơ đã lưu</h2>
+  <div id="list"></div>
+  <h2>Sao lưu</h2>
+  <div class="row"><button id="exp">Xuất file</button><button id="imp">Nhập file</button></div>
+  <input type="file" id="file" accept=".json" hidden>
+  <p class="hint">Dữ liệu lưu trên trình duyệt của máy này. Nên sao lưu định kỳ.</p>
+</aside>
+<main>
+  <div class="top">
+    <label class="f"><span>Tên hồ sơ (để tìm lại)</span><input data-p="name" placeholder="VD: Hường – thừa kế thửa 229 tờ 97"></label>
+    <button class="pri" id="save">💾 Lưu hồ sơ</button>
+    <button id="goex">⬇ Xuất file Word</button>
+    <span class="stat" id="stat">Chưa lưu</span>
+  </div>
+  <details class="guide" open><summary>📖 Hướng dẫn sử dụng (bấm để thu gọn)</summary><ol><li><b>Nhập một lần</b> theo thứ tự các mục 1 → 6. Thông tin dùng chung cho cả 8 mẫu nên không phải gõ lại.</li><li><b>Ô ngày</b>: bấm biểu tượng lịch để chọn. <b>Thôn</b>: chọn trong danh sách; thôn chưa có thì chọn “➕ Thôn khác”, gõ tên rồi bấm “Có, lưu” để lần sau dùng lại.</li><li><b>Thêm người / thêm thửa</b>: dùng nút “＋ Thêm…” ở cuối mỗi mục (đồng thừa kế, người để lại di sản, thửa đất). Bấm “Xóa” để bỏ.</li><li><b>Lưu</b>: form tự lưu sau khi ngừng gõ, hoặc bấm “💾 Lưu hồ sơ”. Muốn sửa lại sau thì bấm tên hồ sơ ở cột bên trái (hoặc phía trên trên điện thoại).</li><li><b>Xuất Word</b>: kéo xuống mục 7 (hoặc bấm “⬇ Xuất file Word”). Bấm từng mẫu để tải riêng, hoặc “Tải tất cả (.zip)” để tải cả bộ 8 file. Khi hộp xác nhận hiện ra, bấm đồng ý để lưu về máy, sau đó giải nén .zip và mở bằng Word.</li><li><b>Sao lưu</b>: bấm “Xuất file” ở cột trái để lưu toàn bộ hồ sơ ra máy; “Nhập file” để khôi phục khi đổi máy.</li></ol></details>
+<div id="form"></div>
+</main>
+</div>
+<script>
+const DEF_THON=["Tiên Lãnh","Sông Tranh","Hòa Bình","Tiên Ngọc","Hòa Đồng","Tiên Hiệp","Hòa Hiệp"];
+const OTH="Khác (tự nhập)",NOI=["Cục Cảnh sát QLHC về TTXH","Bộ Công an"],REL=["Cha ruột","Mẹ ruột","Con ruột"];
+const mem={};
+const saveFile=(name,blob)=>{const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)};
+const st={get(k){try{return localStorage.getItem(k)}catch(e){return mem[k]??null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){mem[k]=v}}};
+let thon=JSON.parse(st.get("dc_thon")||"[]"),all=JSON.parse(st.get("dc_hoso")||"{}");
+const ADR0={dcXa:"xã Lãnh Ngọc",dcTp:"thành phố Đà Nẵng"};
+const blank=()=>({id:"h"+Date.now(),name:"",f:{xa:"Lãnh Ngọc",tp:"thành phố Đà Nẵng",coQuanThue:"Thuế cơ sở 10",lyDo:"Nhận thừa kế quyền sử dụng đất từ "},dec:[{...ADR0}],heirs:[],parcels:[{}],docs:{}});
+let S=blank();
+const villages=()=>[...new Set([...DEF_THON,...thon])];
+const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
+const get=(o,p)=>p.split(".").reduce((a,k)=>a==null?a:a[k],o);
+const put=(o,p,v)=>{const ks=p.split(".");let a=o;ks.slice(0,-1).forEach(k=>a=a[k]??(a[k]={}));a[ks.pop()]=v};
+
+function fld(p,l,o={}){
+  const v=get(S,p),t=o.t||"text",w=o.w?" "+o.w:"";let c;
+  if(t==="area")c=`<textarea data-p="${p}" placeholder="${esc(o.ph||"")}">${esc(v)}</textarea>`;
+  else if(t==="sel")c=`<select data-p="${p}"><option value=""></option>${o.opts.map(x=>`<option${x===v?" selected":""}>${x}</option>`).join("")}</select>`;
+  else c=`<input type="${t==="date"?"date":"text"}" ${t==="num"?'inputmode="decimal"':""} data-p="${p}" value="${esc(v)}" placeholder="${esc(o.ph||"")}">`;
+  return `<label class="f${w}"><span>${l}</span>${c}</label>`;
+}
+function selo(pre,k,l,opts,o={}){
+  const ob=get(S,pre.slice(0,-1))||{},s=ob[k+"Sel"]??o.def??"";
+  return `<div class="f${o.w?" "+o.w:""}"><span>${l}</span><select data-p="${pre}${k}Sel" data-oth>${o.def===undefined?'<option value=""></option>':""}${[...opts,OTH].map(x=>`<option${x===s?" selected":""}>${x}</option>`).join("")}</select><input data-p="${pre}${k}Txt" placeholder="Nhập nội dung khác…" value="${esc(ob[k+"Txt"])}"${s===OTH?"":" hidden"}></div>`;
+}
+const ADR=pre=>thonFld(pre+"thon","Thôn")+fld(pre+"dcXa","Xã / phường")+fld(pre+"dcHuyen","Huyện (nếu có)")+fld(pre+"dcTp","Tỉnh / Thành phố");
+const noi=(pre,w)=>selo(pre,"noiCap","Nơi cấp căn cước",NOI,{def:NOI[0],w});
+const rel=(pre,l)=>selo(pre,"qh",l,REL);
+function thonFld(p,l="Thôn"){
+  const v=get(S,p)||"",isNew=v&&!villages().includes(v);
+  return `<div class="f"><span>${l}</span><select data-vsel="${p}"><option value=""></option>${villages().map(x=>`<option${x===v?" selected":""}>${x}</option>`).join("")}<option value="__new"${isNew?" selected":""}>➕ Thôn khác (ghi thôn mới)…</option></select><div class="vn"${isNew?"":" hidden"}><input data-p="${p}" data-vnew value="${esc(v)}" placeholder="Gõ tên thôn mới"><div class="ask" hidden>Lưu thôn này vào danh sách? <button data-vyes>Có, lưu</button><button data-vno>Không</button></div></div></div>`;
+}
+const sec=(n,t,docs,body,id="")=>`<section${id?` id="${id}"`:""}><h3><b class="n">${n}</b>${t}</h3><p class="docs">${docs.length?"Dùng cho: "+docs.map(d=>`<i>${d}</i>`).join(""):""}</p>${body}</section>`;
+const PER=(b)=>`<div class="g">${fld(b+"hoTen","Họ và tên",{w:"w2",ph:"NGUYỄN VĂN A"})}${fld(b+"gt","Ông / Bà",{t:"sel",opts:["Ông","Bà"]})}${fld(b+"ngaySinh","Ngày sinh",{t:"date"})}${fld(b+"cccd","Số CCCD / định danh")}${fld(b+"cccdNgay","Ngày cấp",{t:"date"})}${noi(b)}</div>`;
+const DL=["Giấy chứng nhận đã cấp","Phiếu đo đạc chỉnh lý thửa đất","Biên bản họp gia đình","Giấy khai sinh","Giấy chứng tử","CCCD người kê khai","Văn bản thừa kế","Giấy xác nhận nhân thân","Đơn miễn thuế"];
+const DOCS=[["nt","Giấy xác nhận nhân thân","Đơn đề nghị xác nhận quan hệ gia đình"],["m22","Mẫu 22","Đơn đăng ký đất đai"],["m25","Mẫu 25","Đơn đăng ký biến động"],["lptb","Tờ khai LPTB","Lệ phí trước bạ"],["sdd","Tờ khai SDĐPNN","Thuế sử dụng đất phi nông nghiệp"],["tncn","Tờ khai TNCN","Thu nhập từ nhận thừa kế BĐS"],["mien","Văn bản miễn thuế","Mẫu 01/MGTH"],["tk","Văn bản thừa kế","Thỏa thuận phân chia di sản"]];
+
+function render(){
+  document.querySelector('[data-p="name"]').value=S.name||"";
+  S.dec=S.dec?.length?S.dec:[{}];
+  let h=sec(1,"Người kê khai / người nhận thừa kế",["Mẫu 22","Mẫu 25","SDĐPNN","LPTB","TNCN","Miễn thuế","Nhân thân"],
+   PER("f.")+`<div class="g" style="margin-top:10px">${fld("f.mst","Mã số thuế (nếu có)")}${fld("f.dt","Điện thoại")}${fld("f.email","Email (nếu có)")}${thonFld("f.thon","Thôn thường trú")}${fld("f.xa","Xã")}${fld("f.tp","Tỉnh/Thành phố")}${selo("f.","qh","Quan hệ với người đã mất",REL)}</div>`);
+  h+=sec(2,"Người để lại di sản (người đã mất)",["Thỏa thuận phân chia","Nhân thân","Miễn thuế","TNCN"],
+   S.dec.map((x,i)=>`<div class="item"><header>Người để lại di sản ${i+1}${S.dec.length>1?`<button data-del="dec.${i}">Xóa</button>`:""}</header>${PER(`dec.${i}.`)}<div class="g" style="margin-top:10px">${rel(`dec.${i}.`,"Quan hệ với người kê khai")}${ADR(`dec.${i}.`)}${fld(`dec.${i}.chet`,"Ngày mất",{t:"date"})}${fld(`dec.${i}.baoTu`,"Số giấy chứng tử / khai tử")}${fld(`dec.${i}.baoTuNgay`,"Ngày cấp",{t:"date"})}${fld(`dec.${i}.baoTuNoi`,"Nơi cấp giấy chứng tử",{w:"w2"})}</div></div>`).join("")+`<button data-add="dec">＋ Thêm người để lại di sản</button>`);
+  h+=sec(3,"Các đồng thừa kế khác",["Thỏa thuận phân chia","Nhân thân","TNCN"],
+   S.heirs.map((x,i)=>`<div class="item"><header>Đồng thừa kế ${i+1}<button data-del="heirs.${i}">Xóa</button></header>${PER(`heirs.${i}.`)}<div class="g" style="margin-top:10px">${rel(`heirs.${i}.`,"Quan hệ với người đã mất")}${ADR(`heirs.${i}.`)}${fld(`heirs.${i}.nhan`,"Vai trò",{t:"sel",opts:["Tặng/nhường phần cho người nhận","Cùng nhận di sản"]})}</div></div>`).join("")+`<button data-add="heirs">＋ Thêm đồng thừa kế</button>`);
+  h+=sec(4,"Thửa đất",["Mẫu 22","Mẫu 25","SDĐPNN","LPTB","TNCN","Thỏa thuận phân chia"],
+   S.parcels.map((x,i)=>`<div class="item"><header>Thửa đất ${i+1}${S.parcels.length>1?`<button data-del="parcels.${i}">Xóa</button>`:""}</header><div class="g">${fld(`parcels.${i}.thua`,"Thửa đất số (hiện tại / sau đo đạc)")}${fld(`parcels.${i}.to`,"Tờ bản đồ số")}${thonFld(`parcels.${i}.thon`,"Thôn (địa chỉ thửa)")}${fld(`parcels.${i}.dt`,"Diện tích hiện tại (m²)",{t:"num"})}${fld(`parcels.${i}.dtO`,"Trong đó đất ở (m²)",{t:"num"})}${fld(`parcels.${i}.loai`,"Loại đất / mục đích",{ph:"Đất trồng cây hàng năm"})}${fld(`parcels.${i}.gcn`,"Số GCN đã cấp")}${fld(`parcels.${i}.vaoSo`,"Số vào sổ")}${fld(`parcels.${i}.gcnNgay`,"Ngày cấp GCN",{t:"date"})}${fld(`parcels.${i}.gcnCq`,"Cơ quan cấp GCN",{w:"w2"})}${fld(`parcels.${i}.gcnDt`,"Diện tích ghi trên GCN (m²)",{t:"num"})}${fld(`parcels.${i}.thoiHan`,"Thời hạn sử dụng",{ph:"Lâu dài"})}${fld(`parcels.${i}.viTri`,"Vị trí / đường (tính LPTB)",{w:"w2",ph:"Đường bê tông rộng 3m (Vị trí 2)"})}${fld(`parcels.${i}.ngDo`,"Ngày duyệt phiếu đo đạc / trích đo",{t:"date"})}${fld(`parcels.${i}.gcnDc`,"Địa chỉ thửa đất ghi trên GCN",{w:"w2",ph:"Thôn 2, xã Tiên Ngọc, huyện Tiên Phước, tỉnh Quảng Nam"})}${fld(`parcels.${i}.loaiGcn`,"Mục đích ghi trên GCN",{ph:"Thổ cư / 2 Lúa"})}${fld(`parcels.${i}.ghiThem`,"Phần ghi thêm (bảng văn bản thừa kế)",{ph:"Trong đó có 200m2 đất ở"})}${fld(`parcels.${i}.thuaCu`,"Số thửa cũ (nếu đã đo lại)")}${fld(`parcels.${i}.toCu`,"Tờ bản đồ cũ (nếu đã đo lại)")}${fld(`parcels.${i}.trichSo`,"Số mảnh trích đo chỉnh lý",{ph:"883-2026"})}${fld(`parcels.${i}.nguon`,"Nguồn gốc",{w:"w4",t:"area",ph:"Hộ gia đình sử dụng ổn định, không tranh chấp…"})}</div></div>`).join("")+`<button data-add="parcels">＋ Thêm thửa đất</button>`);
+  h+=sec(5,"Văn bản thừa kế & thông tin thuế",["Thỏa thuận phân chia","TNCN","LPTB","Miễn thuế"],
+   `<div class="g">${fld("f.vbNgay","Ngày lập văn bản thừa kế",{t:"date"})}${fld("f.vbNoi","Nơi lập",{w:"w2",ph:"UBND xã Lãnh Ngọc"})}${fld("f.vbCq","Cơ quan chứng thực",{w:"w2"})}${fld("f.vbCtNgay","Ngày chứng thực",{t:"date"})}${selo("f.","diChuc","Di chúc",["Không có di chúc","Có di chúc"],{def:"Không có di chúc"}).replace(`<option>${OTH}</option>`,"")}${fld("f.coQuanThue","Kính gửi cơ quan thuế",{w:"w2"})}${fld("f.lyDo","Lý do đề nghị miễn thuế",{w:"w2"})}${fld("f.ngayLap","Ngày làm hồ sơ (ngày ký đơn)",{t:"date"})}</div>`);
+  h+=sec(6,"Giấy tờ nộp kèm",["Mẫu 22","Mẫu 25","LPTB"],`<div class="chk">${DL.map(d=>`<label><input type="checkbox" data-doc="${d}"${S.docs[d]?" checked":""}>${d}</label>`).join("")}</div><div class="g" style="margin-top:10px">${fld("f.khac","Giấy tờ khác",{w:"w4"})}</div>`);
+  h+=sec(7,"Xuất file Word",[],`<p class="hint" style="margin:0 0 10px">Bấm từng mẫu để tải riêng, hoặc tải cả bộ trong một file .zip. Nên lưu hồ sơ trước khi xuất.</p><div class="ex">${DOCS.map(d=>`<button data-exp="${d[0]}"><b>${d[1]}</b><br><span class="hint">${d[2]}</span></button>`).join("")}<button class="pri" data-exp="all"><b>⬇ Tải tất cả (.zip)</b><br>8 file Word</button></div><p class="hint" id="msg"></p>`,"ex");
+  document.getElementById("form").innerHTML=h;
+  renderList();
+}
+function renderList(){
+  const L=Object.values(all).sort((a,b)=>b.u-a.u);
+  document.getElementById("list").innerHTML=L.length?L.map(r=>`<button class="rec${r.id===S.id?" on":""}" data-open="${r.id}"><span class="x" data-rm="${r.id}">Xóa</span><b>${esc(r.name||r.f.hoTen||"(chưa đặt tên)")}</b><span>${new Date(r.u).toLocaleString("vi-VN")}</span></button>`).join(""):'<p class="hint">Chưa có hồ sơ nào.</p>';
+}
+let timer;
+function save(){
+  if(!S.name)S.name=(S.f.hoTen||"Hồ sơ mới")+(S.parcels[0]?.thua?` – thửa ${S.parcels[0].thua}/tờ ${S.parcels[0].to||"?"}`:"");
+  S.u=Date.now();all[S.id]=JSON.parse(JSON.stringify(S));
+  st.set("dc_hoso",JSON.stringify(all));st.set("dc_thon",JSON.stringify(thon));
+  document.querySelector('[data-p="name"]').value=S.name;
+  document.getElementById("stat").textContent="✓ Đã lưu lúc "+new Date().toLocaleTimeString("vi-VN");renderList();
+}
+const dirty=()=>{document.getElementById("stat").textContent="Đang sửa…";clearTimeout(timer);timer=setTimeout(save,1200)};
+document.addEventListener("input",e=>{
+  const t=e.target;
+  if(t.dataset.p){put(S,t.dataset.p,t.value);dirty();if("oth"in t.dataset)t.nextElementSibling.hidden=t.value!==OTH}
+  if(t.dataset.doc){S.docs[t.dataset.doc]=t.checked;dirty()}
+  if(t.dataset.vsel){const vn=t.nextElementSibling;if(t.value==="__new"){vn.hidden=false;put(S,t.dataset.vsel,"");vn.querySelector("input").value="";vn.querySelector("input").focus()}else{vn.hidden=true;vn.querySelector(".ask").hidden=true;put(S,t.dataset.vsel,t.value)}dirty()}
+});
+document.addEventListener("change",e=>{const t=e.target;if("vnew"in t.dataset){const v=t.value.trim();t.nextElementSibling.hidden=!v||villages().includes(v)}});
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-exp],[data-add],[data-del],[data-vyes],[data-vno],[data-rm],[data-open]")||e.target,d=t.dataset;
+  if(d.vyes!==undefined){const i=t.closest(".vn").querySelector("input"),v=i.value.trim();if(v&&!villages().includes(v)){thon.push(v);st.set("dc_thon",JSON.stringify(thon))}save();render()}
+  if(d.vno!==undefined)t.closest(".ask").hidden=true;
+  if(d.add){S[d.add].push(d.add==="heirs"?{nhan:"Tặng/nhường phần cho người nhận",...ADR0}:d.add==="dec"?{...ADR0}:{});render();dirty()}
+  if(d.del){const[k,i]=d.del.split(".");S[k].splice(+i,1);render();dirty()}
+  if(d.exp)exportDocs(d.exp);
+  if(d.rm){e.stopPropagation();if(t.textContent!=="Chắc chắn xóa?"){t.textContent="Chắc chắn xóa?";return}delete all[d.rm];st.set("dc_hoso",JSON.stringify(all));if(S.id===d.rm)S=blank();render();return}
+  const o=t.closest("[data-open]");if(o&&!d.rm){S=JSON.parse(JSON.stringify(all[o.dataset.open]));render();document.getElementById("stat").textContent="Đã mở hồ sơ";scrollTo(0,0)}
+});
+document.getElementById("goex").onclick=()=>document.getElementById("ex").scrollIntoView();
+document.getElementById("save").onclick=save;
+document.getElementById("new").onclick=()=>{S=blank();render();document.getElementById("stat").textContent="Hồ sơ mới – chưa lưu";scrollTo(0,0)};
+document.getElementById("exp").onclick=async()=>{const b=new Blob([JSON.stringify({hoso:all,thon})],{type:"application/json"});saveFile("sao-luu-ho-so.json",b)};
+document.getElementById("imp").onclick=()=>document.getElementById("file").click();
+document.getElementById("file").onchange=async e=>{try{const j=JSON.parse(await e.target.files[0].text());Object.assign(all,j.hoso||{});thon=[...new Set([...thon,...(j.thon||[])])];st.set("dc_hoso",JSON.stringify(all));st.set("dc_thon",JSON.stringify(thon));render()}catch(x){alert("File không hợp lệ")}};
+
+/* ===== Xuất Word ===== */
+const fin=(o,k,d="")=>{const s=o[k+"Sel"]||d;return s===OTH?(o[k+"Txt"]||""):s};
+const dots="……………",V=(x,d=dots)=>x&&String(x).trim()?x:d;
+const dmy=s=>{if(!s)return"";const[a,b,c]=s.split("-");return`${c}/${b}/${a}`};
+const dt=s=>{if(!s)return"ngày … tháng … năm …";const[a,b,c]=s.split("-");return`ngày ${+c} tháng ${+b} năm ${a}`};
+const up=s=>(s||"").toUpperCase();
+const idl=o=>`CCCD số ${V(o.cccd)} do ${V(fin(o,"noiCap",NOI[0]))} cấp ngày ${V(dmy(o.cccdNgay))}`;
+const addr=o=>o.thon?`Thôn ${o.thon}, xã ${V(S.f.xa,"Lãnh Ngọc")}, ${V(S.f.tp,"thành phố Đà Nẵng")}`:V(o.dc,dots);
+const pt=p=>`thửa đất số ${V(p.thua)}, tờ bản đồ số ${V(p.to)}, diện tích ${V(p.dt)} m², loại đất: ${V(p.loai)}`;
+const addrP=o=>(o.thon||o.dcXa||o.dcHuyen||o.dcTp)?[o.thon?"Thôn "+o.thon:"",o.dcXa,o.dcHuyen,o.dcTp].filter(Boolean).join(", "):V(o.dc);
+const tt=o=>o.gt||(fin(o,"qh")==="Cha ruột"?"Ông":fin(o,"qh")==="Mẹ ruột"?"Bà":(/(^|\s)Thị(\s|$)/i.test(o.hoTen||"")?"Bà":"Ông")),tl=o=>tt(o).toLowerCase(),Cap=x=>x.charAt(0).toUpperCase()+x.slice(1);
+const NW="không,một,hai,ba,bốn,năm,sáu,bảy,tám,chín,mười,mười một,mười hai,mười ba,mười bốn,mười lăm,mười sáu,mười bảy,mười tám,mười chín,hai mươi".split(",");const num=n=>`${n} (${NW[n]||n})`;
+const titleOf=d=>tl(d);const _t=d=>{const r=fin(d,"qh");return r==="Cha ruột"?"ông":r==="Mẹ ruột"?"bà":"ông/bà"};
+const relOf=o=>{const r=fin(o,"qh");return r==="Con ruột"?"con đẻ":r==="Cha ruột"?"cha đẻ":r==="Mẹ ruột"?"mẹ đẻ":V(r.toLowerCase(),"người thừa kế")};
+const attach=()=>[...DL.filter(d=>S.docs[d]),...(S.f.khac?[S.f.khac]:[])];
+function G(){
+const D=window.docx,{Document,Packer,Paragraph,TextRun,Table,TableRow,TableCell,AlignmentType:AL,WidthType:WT,PageBreak}=D;
+const P=(t,o={})=>new Paragraph({alignment:o.c?AL.CENTER:o.r?AL.RIGHT:AL.JUSTIFIED,spacing:{after:80,line:300},indent:o.ind?{left:567}:undefined,children:String(t).split("**").map((s,i)=>new TextRun({text:s,font:"Times New Roman",size:o.sz||26,bold:o.b||i%2===1,italics:o.i}))});
+const T=(h,rows)=>new Table({width:{size:100,type:WT.PERCENTAGE},rows:[h,...rows].map((r,i)=>new TableRow({children:r.map(c=>new TableCell({width:{size:100/r.length,type:WT.PERCENTAGE},children:[P(String(c??""),{b:i===0,sz:22})]}))}))});
+const HD=()=>[P("CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM",{c:1,b:1}),P("Độc lập - Tự do - Hạnh phúc",{c:1,b:1}),P("---------------",{c:1})];
+const TT=(t,sub)=>[P(t,{c:1,b:1,sz:30}),...(sub?[P(sub,{c:1,i:1})]:[])];
+const SIGN=l=>[P(`Lãnh Ngọc, ${dt(S.f.ngayLap)}`,{r:1,i:1}),P(l,{r:1,b:1}),P("(Ký, ghi rõ họ tên)",{r:1,i:1}),P(" "),P(" "),P(S.f.hoTen||"",{r:1,b:1})];
+const PB=()=>new Paragraph({children:[new PageBreak()]});
+const f=S.f,d0=S.dec[0]||{},kids=[f,...S.heirs],ti=titleOf(d0);
+const parcelsLoop=fn=>S.parcels.flatMap((p,i)=>i?[PB(),...fn(p,i)]:fn(p,i));
+const gen={
+nt:()=>[...HD(),...TT("ĐƠN ĐỀ NGHỊ","(V/v: Xác nhận mối quan hệ gia đình và xin miễn thuế thu nhập cá nhân, lệ phí trước bạ khi nhận thừa kế đất đai)"),
+ P(`Kính gửi: ${V(f.coQuanThue)}.`),P(`Tôi tên là: **${V(f.hoTen)}**. Sinh ngày: ${V(dmy(f.ngaySinh))}`),P(`${idl(f)}.`),P(`Thường trú: ${addr(f)}.`),
+ P("Tôi làm đơn này xin trình bày với Quý cơ quan một việc như sau:"),
+ P(`Tôi là ${relOf(f)} của ${ti} **${V(d0.hoTen)}** (đã chết). ${ti[0].toUpperCase()+ti.slice(1)} có ${String(kids.length).padStart(2,"0")} người con đẻ, danh sách cụ thể như sau:`),
+ ...kids.map(k=>P(`Ông/Bà: ${V(k.hoTen)}${k===f?" (là tôi)":""}`,{ind:1})),
+ P(`Hiện nay, các đồng thừa kế đã thống nhất thỏa thuận để tôi (${V(f.hoTen)}) được nhận thừa kế quyền sử dụng đất từ ${ti} ${V(d0.hoTen)} đối với các thửa đất sau:`),...S.parcels.map(p=>P("- "+pt(p),{ind:1})),
+ P("Theo quy định của pháp luật hiện hành, việc thừa kế quyền sử dụng đất giữa cha mẹ đẻ và con đẻ thuộc đối tượng được miễn Thuế thu nhập cá nhân và Lệ phí trước bạ."),
+ P("Vậy, tôi làm đơn này kính trình Quý cơ quan xem xét, xác nhận thông tin nhân thân, quan hệ thừa kế nêu trên và hoàn tất thủ tục miễn thuế thu nhập cá nhân, lệ phí trước bạ cho tôi theo quy định của pháp luật."),
+ P("Tôi xin cam đoan những thông tin kê khai trên là hoàn toàn đúng sự thật, nếu sai tôi xin chịu hoàn toàn trách nhiệm trước pháp luật."),P("Kính mong Quý cơ quan xem xét, giải quyết. Tôi xin chân thành cảm ơn!"),...SIGN("Người viết giấy")],
+m22:()=>[...HD(),...TT("ĐƠN ĐĂNG KÝ ĐẤT ĐAI, TÀI SẢN GẮN LIỀN VỚI ĐẤT"),P("Kính gửi: UBND xã Lãnh Ngọc"),
+ P("1. Người sử dụng đất, chủ sở hữu tài sản gắn liền với đất, người quản lý đất:",{b:1}),P(`a) Họ và tên: **${up(f.hoTen)}**`),P(`b) Giấy tờ nhân thân: ${idl(f)}`),P(`c) Mã số thuế (nếu có): ${V(f.mst)}`),P(`d) Địa chỉ: ${addr(f)}`),P(`đ) Điện thoại liên hệ: ${V(f.dt)}. Hộp thư điện tử: ${V(f.email)}`),
+ ...S.parcels.flatMap((p,i)=>[P(`2. Thửa đất đăng ký${S.parcels.length>1?` (thửa thứ ${i+1})`:""}:`,{b:1}),P(`Thửa đất số: ${V(p.thua)}; Tờ bản đồ số: ${V(p.to)}`),P(`Địa chỉ: ${addr(p)}`),P(`Diện tích: ${V(p.dt)} m²`),P(`Sử dụng vào mục đích: ${V(p.loai)}${p.dtO?` (trong đó đất ở ${p.dtO} m²)`:""}`),P(`Thời hạn sử dụng đất: ${V(p.thoiHan,"Lâu dài")}`),P(`Nguồn gốc sử dụng đất: ${V(p.nguon,"Nhận thừa kế")}`)]),
+ P("4. Đề nghị của người sử dụng đất, chủ sở hữu tài sản gắn liền với đất:",{b:1}),P("☒ Đề nghị đăng ký đất đai, tài sản gắn liền với đất"),P("☒ Đề nghị cấp Giấy chứng nhận"),P("☐ Đề nghị ghi nợ tiền sử dụng đất"),
+ P(`Thông tin về đối tượng được miễn, giảm nghĩa vụ tài chính về đất đai: ${V(f.lyDo)}`),P("Những giấy tờ nộp kèm theo:"),...attach().map(a=>P("- "+a,{ind:1})),
+ P("Tôi xin cam đoan nội dung kê khai trên đơn là đúng sự thật, nếu sai tôi hoàn toàn chịu trách nhiệm trước pháp luật."),...SIGN("Người sử dụng đất/Người kê khai")],
+m25:()=>[P("Mẫu số 25. Đơn đăng ký biến động đất đai, tài sản gắn liền với đất",{i:1,sz:22}),...HD(),...TT("ĐƠN ĐĂNG KÝ BIẾN ĐỘNG ĐẤT ĐAI, TÀI SẢN GẮN LIỀN VỚI ĐẤT"),P("Kính gửi: UBND xã Lãnh Ngọc, thành phố Đà Nẵng"),
+ P("1. Người sử dụng đất, chủ sở hữu tài sản gắn liền với đất, người quản lý đất:",{b:1}),P(`Tên: **${up(f.hoTen)}**`),P(`Giấy tờ nhân thân: ${idl(f)}`),P(`Địa chỉ: ${addr(f)}`),P(`Điện thoại liên hệ: ${V(f.dt)}. Hộp thư điện tử: ${V(f.email)}`),
+ P("2. Nội dung biến động:",{b:1}),
+ ...S.parcels.flatMap(p=>[P(`- Thửa đất số ${V(p.thua)} tờ bản đồ ${V(p.to)} thuộc ${addr(p)}, được ${V(p.gcnCq)} cấp giấy chứng nhận quyền sử dụng đất số ${V(p.gcn)}, số vào sổ ${V(p.vaoSo)} cấp ngày ${V(dmy(p.gcnNgay))}. Diện tích ghi trên GCN: ${V(p.gcnDt)} m². Loại đất: ${V(p.loai)}, thời hạn sử dụng đất: ${V(p.thoiHan,"Lâu dài")}.`),
+  ...(p.ngDo?[P(`- Thửa đất trên được đo đạc, chỉnh lý theo Phiếu đo đạc chỉnh lý thửa đất được Chi nhánh Văn phòng đăng ký đất đai khu vực XVI duyệt ngày ${dmy(p.ngDo)} với diện tích sau đo đạc là ${V(p.dt)} m².`)]:[]),
+  P(`- ${V(p.nguon,"Thửa đất sử dụng ổn định, không tranh chấp.")}`)]),
+ P(`- Nay tôi nhận thừa kế quyền sử dụng đất từ ${ti} ${V(d0.hoTen)} (đã chết) và có nhu cầu đăng ký biến động, cấp mới Giấy chứng nhận.`),
+ P("3. Giấy tờ liên quan đến nội dung biến động nộp kèm theo đơn này gồm có:",{b:1}),...attach().map(a=>P(a+";",{ind:1})),
+ P("Cam đoan nội dung kê khai trên đơn là đúng sự thật và chịu trách nhiệm trước pháp luật."),...SIGN("Người viết đơn")],
+lptb:()=>parcelsLoop(p=>[P("Mẫu số: 01/LPTB",{i:1,sz:22}),...HD(),...TT("TỜ KHAI LỆ PHÍ TRƯỚC BẠ","(Áp dụng đối với nhà, đất)"),
+ P("[01] Kỳ tính thuế: Theo từng lần phát sinh "+dt(f.ngayLap)),P("[02] Lần đầu: ☒    [03] Bổ sung lần thứ: …"),
+ P(`[04] Người nộp thuế: **${V(f.hoTen)}**`),P(`[05] Ngày, tháng, năm sinh: ${V(dmy(f.ngaySinh))}`),P(`[06] Mã số thuế: ${V(f.mst)}`),P(`[07] Số định danh cá nhân/Số hộ chiếu: ${V(f.cccd)}`),P(`[08] Địa chỉ: ${f.thon?"Thôn "+f.thon:dots}`),P(`[09] Xã/phường/đặc khu: ${V(f.xa)}.  [10] Tỉnh/Thành phố: ${V(f.tp)}`),P(`[11] Điện thoại: ${V(f.dt)}.  [13] Email: ${V(f.email)}`),
+ P("ĐẶC ĐIỂM NHÀ ĐẤT:",{b:1}),P("1. Đất:",{b:1}),P(`1.1. Thửa đất số: ${V(p.thua)}; Tờ bản đồ số: ${V(p.to)}`),P(`1.2. Địa chỉ thửa đất: Thôn/xóm/ấp: ${V(p.thon)}; Xã/phường/đặc khu: ${V(f.xa)}; Tỉnh/thành phố: ${V(f.tp)}`),
+ P(`1.3. Vị trí thửa đất: ${V(p.viTri)}`),P(`1.4. Mục đích sử dụng đất: ${V(p.loai)}${p.dtO?` (đất ở ${p.dtO} m²)`:""}`),P(`1.5. Diện tích (m²): ${V(p.dt)}`),P("1.6. Nguồn gốc nhà đất: Nhận thừa kế"),
+ P(`a) Tên cá nhân chuyển giao QSDĐ: ${V(d0.hoTen)}`),P(`   Số định danh cá nhân: ${V(d0.cccd)}`),P(`   Địa chỉ: ${addrP(d0)}`),P(`b) Thời điểm làm giấy tờ chuyển giao QSDĐ: ${dt(f.vbNgay)}`),
+ P("4. Tài sản thuộc diện được miễn lệ phí trước bạ (lý do): "+V(f.lyDo)),P("6. Giấy tờ có liên quan, gồm:",{b:1}),...attach().map(a=>P("- "+a,{ind:1})),
+ P("Tôi cam đoan số liệu khai trên là đúng và chịu trách nhiệm trước pháp luật về số liệu đã khai./."),...SIGN("NGƯỜI NỘP THUẾ")]),
+sdd:()=>parcelsLoop(p=>[P("Mẫu số: 01/TK-SDDPNN",{i:1,sz:22}),...HD(),...TT("TỜ KHAI THUẾ SỬ DỤNG ĐẤT PHI NÔNG NGHIỆP","(Áp dụng đối với hộ gia đình, cá nhân)"),
+ P("[01] Kỳ tính thuế: Năm "+((S.f.ngayLap||"").slice(0,4)||"2026")),P("[02] Lần đầu: ☒    [03] Bổ sung lần thứ: …"),P("1. Người nộp thuế:",{b:1}),
+ P(`[04] Họ và tên: ${V(f.hoTen)}`),P(`[05] Ngày, tháng, năm sinh: ${V(dmy(f.ngaySinh))}`),P(`[06] Mã số thuế: ${V(f.mst)}`),P(`[07] Số định danh cá nhân/Số hộ chiếu: ${V(f.cccd)}`),P(`[08] Địa chỉ cư trú: [08.3] Tổ/thôn: ${V(f.thon)}; [08.4] Xã: ${V(f.xa)}; [08.5] Tỉnh/Thành phố: ${V(f.tp)}`),P(`[09] Địa chỉ nhận thông báo thuế: ${addr(f)}`),P(`[10] Điện thoại: ${V(f.dt)}`),
+ P("3. Thửa đất chịu thuế:",{b:1}),T(["STT","Họ và tên","Mã số thuế","Số định danh cá nhân","Tỷ lệ"],[["01",f.hoTen,f.mst,f.cccd,"100%"]]),
+ P("[15] Nguồn gốc thửa đất: Nhận thừa kế"),P(`[15.1] Tên cá nhân chuyển giao quyền sử dụng đất: ${V(d0.hoTen)}`),P(`[15.3] Số định danh cá nhân: ${V(d0.cccd)}`),
+ P(`[16] Địa chỉ thửa đất: [16.3] Tổ/thôn: ${V(p.thon)}; [16.4] Xã: ${V(f.xa)}; [16.5] Tỉnh/Thành phố: ${V(f.tp)}`),
+ ...(p.gcn?[P(`[19] Đã có giấy chứng nhận: [19.1] Số: ${p.gcn}; [19.2] Ngày cấp: ${V(dmy(p.gcnNgay))}; [19.3] Thửa số: ${V(p.thua)}; [19.4] Tờ bản đồ số: ${V(p.to)}; [19.5] Diện tích: ${V(p.gcnDt||p.dt)}; [19.6] Loại đất: ${V(p.loai)}`)]:[P(`[21] Chưa có giấy chứng nhận: ☒  [21.1] Diện tích: ${V(p.dt)} m². [21.2] Loại đất/Mục đích đang sử dụng: ${V(p.loai)}`)]),
+ P(`[20] Thửa đất số: ${V(p.thua)}, tờ bản đồ số ${V(p.to)}; diện tích đất ở: ${V(p.dtO,"…")} m²`),P("5. Miễn, giảm thuế [25]:",{b:1}),P(`[25.1] Trường hợp miễn, giảm: ${V(f.lyDo)}`),
+ P("Tôi cam đoan số liệu khai trên là đúng và chịu trách nhiệm trước pháp luật về số liệu đã khai./."),...SIGN("NGƯỜI NỘP THUẾ")]),
+tncn:()=>[P("Mẫu số: 03/BĐS-TNCN",{i:1,sz:22}),...HD(),...TT("TỜ KHAI THUẾ THU NHẬP CÁ NHÂN","(Áp dụng đối với cá nhân có thu nhập từ chuyển nhượng bất động sản; thu nhập từ nhận thừa kế và nhận quà tặng là bất động sản)"),
+ P("[01] Kỳ tính thuế: Lần phát sinh: "+dt(f.ngayLap)),P("[02] Lần đầu: ☒"),P("I. THÔNG TIN NGƯỜI CHUYỂN NHƯỢNG, NHẬN THỪA KẾ, QUÀ TẶNG",{b:1}),
+ T(["STT","Họ và tên","MST/Số định danh","Ngày sinh","Điện thoại","Email","Tỷ lệ sở hữu (%)"],[["1",f.hoTen,f.cccd,dmy(f.ngaySinh),f.dt,f.email,"100"]]),
+ P("II. THÔNG TIN NGƯỜI NHẬN CHUYỂN NHƯỢNG, NHẬN THỪA KẾ, QUÀ TẶNG",{b:1}),T(["STT","Họ và tên","MST/Số định danh","Ngày sinh","Tỷ lệ sở hữu (%)"],[["1","","","",""]]),
+ P("III. LOẠI BẤT ĐỘNG SẢN",{b:1}),P("[12] Quyền sử dụng đất và tài sản gắn liền trên đất ☒"),P("[13] Quyền sở hữu hoặc sử dụng nhà ở ☐"),
+ P("IV. ĐẶC ĐIỂM BẤT ĐỘNG SẢN",{b:1}),P("[19] Văn bản phân chia di sản thừa kế, quà tặng là bất động sản:"),P(`[19.1] Nơi lập hồ sơ: ${V(f.vbNoi)}   [19.2] Ngày lập: ${V(dmy(f.vbNgay))}`),P(`[19.3] Cơ quan chứng thực: ${V(f.vbCq)}   [19.4] Ngày chứng thực: ${V(dmy(f.vbCtNgay))}`),
+ ...S.parcels.flatMap((p,i)=>[P(`[20] Thông tin về đất${S.parcels.length>1?` (thửa ${i+1})`:""}:`),P(`[20.1] Thửa đất số: ${V(p.thua)}; [20.2] Tờ bản đồ số: ${V(p.to)}`),P(`[20.3] Địa chỉ: Thôn ${V(p.thon)}; [20.4] Xã: ${V(f.xa)}; [20.5] Tỉnh/thành phố: ${V(f.tp)}`),P(`[20.6] Loại đất: ${V(p.loai)}; Vị trí: ${V(p.viTri)}; Diện tích: ${V(p.dt)} m²`)]),
+ P("Tôi cam đoan số liệu khai trên là đúng và chịu trách nhiệm trước pháp luật về số liệu đã khai./."),...SIGN("NGƯỜI NỘP THUẾ")],
+mien:()=>[P("Mẫu số: 01/MGTH",{i:1,sz:22}),...HD(),P(`Lãnh Ngọc, ${dt(f.ngayLap)}`,{r:1,i:1}),...TT("VĂN BẢN ĐỀ NGHỊ MIỄN (GIẢM)","Tiền thuế thu nhập cá nhân và lệ phí trước bạ nhà đất"),
+ P(`Kính gửi: ${V(f.coQuanThue)} thành phố Đà Nẵng.`),P(`[01] Tên người nộp thuế: ${V(f.hoTen)}`),P(`[02] Mã số thuế: ${V(f.mst)}`),P(`[03] Địa chỉ: ${f.thon?"Thôn "+f.thon:dots}   [03a] Xã: ${V(f.xa)}   [03c] Thành phố: Đà Nẵng`),P(`[04] Điện thoại: ${V(f.dt)}   [06] E-mail: ${V(f.email,"............")}`),
+ P("Đề nghị được miễn (giảm) Tiền thuế thu nhập cá nhân và lệ phí trước bạ nhà đất với lý do cụ thể như sau:"),P(`1. Lý do đề nghị miễn (giảm): ${V(f.lyDo)}`),
+ P("- Căn cứ Khoản 4 Điều 4 Luật Thuế thu nhập cá nhân số 04/2007/QH12 đã được sửa đổi, bổ sung bởi Luật số 26/2012/QH13 và Luật số 71/2014/QH13."),P("- Căn cứ Khoản 10 Điều 10 Nghị định số 10/2022/NĐ-CP ngày 15/01/2022 của Chính phủ quy định về lệ phí trước bạ."),
+ P("2. Xác định số thuế được miễn (giảm):",{b:1}),P("Đơn vị tiền: Đồng Việt Nam",{i:1}),T(["STT","Tên khoản thu được miễn (giảm)","Kỳ tính thuế","Số tiền đề nghị miễn (giảm)","Số tiền đã nộp"],[["1","Thuế thu nhập cá nhân","","",""],["2","Lệ phí trước bạ","","",""],["","Cộng","","",""]]),
+ P("3. Tài liệu gửi kèm:",{b:1}),...(attach().length?attach():["Bản sao giấy khai sinh"]).map(a=>P("- "+a,{ind:1})),
+ P("Tôi cam đoan số liệu khai trên là đúng và chịu trách nhiệm trước pháp luật về những số liệu đã khai./."),P("NGƯỜI NỘP THUẾ hoặc ĐẠI DIỆN HỢP PHÁP CỦA NGƯỜI NỘP THUẾ",{r:1,b:1}),P("(Ký, ghi rõ họ tên)",{r:1,i:1}),P(" "),P(f.hoTen||"",{r:1,b:1})],
+tk:()=>{
+ const L=[f,...S.heirs],gift=S.heirs.filter(h=>h.nhan!=="Cùng nhận di sản"),
+ dn=d=>`${tl(d)} ${V(d.hoTen)}`,names=S.dec.map(dn).join(" và "),
+ kidsL=L.filter(k=>fin(k,"qh")==="Con ruột"),othL=L.filter(k=>fin(k,"qh")!=="Con ruột"),
+ allN=L.map(k=>V(k.hoTen)).join(", "),adr=k=>k===f?addr(f):addrP(k),grp=[];
+ [...S.parcels].sort((a,b)=>!!b.gcn-!!a.gcn).forEach(p=>{const key=[p.gcn,p.vaoSo,p.gcnNgay,p.gcnCq,p.gcnDc].join("|");let g=grp.find(x=>x.key===key);if(!g&&!p.gcn&&grp.length)g=grp[grp.length-1];if(!g)grp.push(g={key,p,list:[]});g.list.push(p)});
+ const desc=[othL.length?othL.map(k=>(fin(k,"qh")||"người thừa kế").toLowerCase()).join(", "):"",kidsL.length?`${num(kidsL.length)} người con đẻ`:""].filter(Boolean).join(" và ")||`${L.length} người`;
+ const d0n=dn(d0);
+ return[...HD(),...TT("THỎA THUẬN","PHÂN CHIA DI SẢN THỪA KẾ VÀ ĐỊNH ĐOẠT TÀI SẢN CHUNG"),
+ P(`Những người được hưởng di sản thừa kế của ${names} (đã chết) để lại gồm có:`),
+ ...L.flatMap((k,i)=>[P(`${i+1}. ${tt(k)}: **${V(k.hoTen)}**. Sinh ngày: ${V(dmy(k.ngaySinh))}`),P(`CCCD số: ${V(k.cccd)}. Ngày cấp: ${V(dmy(k.cccdNgay))}`),P(`Nơi cấp: ${V(fin(k,"noiCap",NOI[0]))}`),P(`Địa chỉ thường trú: ${adr(k)}`)]),
+ P("Chúng tôi cùng lập văn bản này để thỏa thuận việc phân chia di sản thừa kế với các nội dung như sau:"),P("1. Về người để lại di sản:",{b:1}),
+ ...S.dec.map(d=>P(`- ${Cap(dn(d))} chết ${dt(d.chet)} theo ${V(d.baoTu)} do ${V(d.baoTuNoi)} cấp ngày ${V(dmy(d.baoTuNgay))}.`)),
+ P(`2. Di sản: Di sản của ${names} được phân chia trong thỏa thuận này là:`,{b:1}),
+ ...grp.flatMap((g,gi)=>[P(g.p.gcn?`2.${gi+1}. Quyền sử dụng đất tại Giấy chứng nhận quyền sử dụng đất số ${g.p.gcn}, số vào sổ ${V(g.p.vaoSo)} do ${V(g.p.gcnCq)} cấp ngày ${V(dmy(g.p.gcnNgay))}, địa chỉ thửa đất tại ${V(g.p.gcnDc)} được liệt kê theo bảng sau đây:`:`2.${gi+1}. Quyền sử dụng đất (chưa được cấp Giấy chứng nhận) được liệt kê theo bảng sau đây:`),
+  T(["TT","Số tờ BĐ","Số thửa","Diện tích (m2)","Mục đích sử dụng","Thời hạn sử dụng","Phần ghi thêm"],g.list.map((p,i)=>[i+1,p.toCu||p.to,p.thuaCu||p.thua,p.gcnDt||p.dt,p.loaiGcn||p.loai,V(p.thoiHan,"Lâu dài"),p.ghiThem||(p.dtO?`Trong đó có ${p.dtO}m2 đất ở`:"")])),
+  ...g.list.filter(p=>p.thuaCu||p.toCu||p.trichSo).map(p=>P(`Riêng thửa đất số ${V(p.thuaCu||p.thua)} tờ bản đồ số ${V(p.toCu||p.to)} được đo đạc lại tại Mảnh trích đo chỉnh lý bản đồ địa chính số ${V(p.trichSo)} do Chi nhánh văn phòng đăng ký đất đai khu vực XVI duyệt ${dt(p.ngDo)} tại thửa đất số ${V(p.thua)} tờ bản đồ số ${V(p.to)}, diện tích ${V(p.dt)} m2. Địa chỉ thửa đất: ${addr(p)}.`))]),
+ P(`- ${fin(f,"diChuc","Không có di chúc")==="Có di chúc"?`${Cap(names)} có để lại di chúc.`:`Trước khi chết, ${names} không để lại di chúc và không để lại nghĩa vụ về tài sản nào.`}`),
+ P("3. Về quan hệ thừa kế và thỏa thuận tài sản chung:",{b:1}),P(`Bố mẹ đẻ của ${d0n} đều đã chết trước ${d0n}.`),
+ P(`${Cap(d0n)} có ${desc}${kidsL.length?`, gồm: ${kidsL.map(k=>V(k.hoTen)).join(", ")}`:""}.`),P(`${Cap(d0n)} không có cha nuôi, mẹ nuôi và con nuôi.`),
+ P("4. Nội dung thỏa thuận:",{b:1}),P(`- Theo quy định của Pháp luật, người thừa kế di sản của ${names}, gồm ${desc} là ông/bà ${allN}.`),
+ P(`- Bằng văn bản này, chúng tôi, những người tham gia khai nhận di sản thừa kế đồng ý khai nhận thừa kế toàn bộ di sản của ${names} đã nêu trong văn bản.`),
+ ...(gift.length?[P(`- Ông/bà ${gift.map(g=>V(g.hoTen)).join(", ")}, đồng ý tặng toàn bộ phần thừa kế là quyền sử dụng, quyền sở hữu của mình đối với di sản nêu trên mà mỗi người được hưởng từ ${names} cho ${tl(f)} ${V(f.hoTen)}.`),
+  P(`- ${Cap(tl(f))} ${V(f.hoTen)} đồng ý tiếp nhận các phần di sản được tặng cho nêu trên, và gộp với phần di sản thừa kế mà mình được hưởng của ${names}, để trở thành người duy nhất thừa kế toàn bộ di sản của ${names} đã nêu trong văn bản.`)]:[]),
+ P(`- Kể từ ngày ký thỏa thuận này, ${tl(f)} ${V(f.hoTen)} được làm các thủ tục để đăng ký quyền sử dụng đối với các thửa đất nêu trên theo đúng quy định của Pháp luật.`),
+ P("* Quyền và nghĩa vụ của người được hưởng di sản, tài sản:",{b:1}),
+ ...["Nhận phần di sản, tài sản mà những người đồng thừa kế, thỏa thuận tài sản chung đã thỏa thuận nhường, cho tặng cùng các giấy tờ có liên quan đến tài sản nêu trên.","Hoàn thành thủ tục đăng ký quyền sở hữu và sử dụng đối với tài sản theo quy định của Pháp luật và nộp các khoản thuế, phí, lệ phí liên quan.","Đảm bảo thực hiện các nghĩa vụ đã nêu trong văn bản."].map(x=>P("- "+x)),
+ P("5. Cam kết của những người tham gia phân chia di sản:",{b:1}),P("Chúng tôi, những người tham gia thỏa thuận phân chia di sản này xin cam đoan:"),
+ ...["Những thông tin về nhân thân, về di sản và các giấy tờ liên quan đến di sản thừa kế do chúng tôi cung cấp trong Thỏa thuận phân chia di sản này là đúng sự thật.",`Không bỏ sót, không giấu người thừa kế theo quy định của pháp luật; Ngoài những người thừa kế có tên nêu trong văn bản, ${tl(f)} ${V(f.hoTen)} không còn người thừa kế nào khác. Nếu còn có ai chứng minh được là người thừa kế hợp pháp của ${tl(f)} ${V(f.hoTen)}, thì chúng tôi hoàn toàn liên đới chịu trách nhiệm trước pháp luật, kể cả việc bồi thường bằng tài sản riêng của chúng tôi nếu có thiệt hại xảy ra, và không yêu cầu người chứng thực văn bản này phải chịu trách nhiệm gì về những việc này.`,"Không ai trong chúng tôi có bất cứ hành vi nào dẫn đến việc bị truất quyền thừa kế theo quy định của Pháp luật.","Di sản nêu trên không bị tranh chấp, không bị kê biên hoặc thu hồi theo quyết định của cơ quan nhà nước có thẩm quyền mà chủ sở hữu/sử dụng chưa chấp hành, và không được dùng để đảm bảo một nghĩa vụ nào khác.","Thỏa thuận này do chúng tôi tự nguyện lập và việc phân chia, cho tặng di sản thừa kế nêu trên không nhằm trốn tránh việc thực hiện nghĩa vụ tài sản nào của bất cứ ai trong số chúng tôi.","Chúng tôi đã tự đọc/nghe đọc lại toàn bộ văn bản, đã hiểu rõ nội dung và trách nhiệm của mình khi lập văn bản và cùng tự nguyện ký tên/ điểm chỉ dưới đây để làm bằng chứng."].map(x=>P("- "+x)),
+ P("NHỮNG NGƯỜI THAM GIA THỎA THUẬN",{c:1,b:1}),T(["Họ và tên","Chữ ký / điểm chỉ"],L.map(k=>[V(k.hoTen),""]))]}
+};
+return{gen,mk:k=>Packer.toBlob(new Document({sections:[{properties:{page:{margin:{top:1134,bottom:1134,left:1701,right:1134}}},children:gen[k]()}]}))};
+}
+
+const TPL="mau-to-khai.b64";
+const xe=t=>String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+async function tkTpl(){
+ const r=await fetch(TPL);if(!r.ok)throw new Error("tpl "+r.status);
+ const z=await JSZip.loadAsync((await r.text()).trim(),{base64:true});
+ const K=JSON.parse(await z.file("protos.json").async("string"));
+ let x=await z.file("word/document.xml").async("string");
+ const run=(t,b)=>String(t).split("\t").map((q,i)=>(i?`<w:r><w:rPr>${K.rp}</w:rPr><w:tab/></w:r>`:"")+(q?`<w:r><w:rPr>${b?"<w:b/>":""}${K.rp}</w:rPr><w:t xml:space="preserve">${xe(q)}</w:t></w:r>`:"")).join("");
+ const pa=(k,sg)=>`<w:p><w:pPr>${K.pp[k]}</w:pPr>${(Array.isArray(sg)?sg:[[sg]]).map(([t,b])=>run(t,b)).join("")}</w:p>`;
+ const f=S.f,d0=S.dec[0]||{},L=[f,...S.heirs],gift=S.heirs.filter(h=>h.nhan!=="Cùng nhận di sản");
+ const lt=a=>{const q=new Set(a.map(tl));return q.size===1?[...q][0]:"ông/bà"};
+ const dn=d=>`${tl(d)} ${V(d.hoTen)}`,names=S.dec.map(dn).join(" và "),d0n=dn(d0);
+ const kidsL=L.filter(k=>fin(k,"qh")==="Con ruột"),othL=L.filter(k=>fin(k,"qh")!=="Con ruột");
+ const desc=[othL.length?othL.map(k=>(fin(k,"qh")||"người thừa kế").toLowerCase()).join(", "):"",kidsL.length?`${num(kidsL.length)} người con đẻ`:""].filter(Boolean).join(" và ")||`${L.length} người`;
+ const adr=k=>k===f?addr(f):addrP(k),grp=[];
+ [...S.parcels].sort((a,b)=>!!b.gcn-!!a.gcn).forEach(p=>{const key=[p.gcn,p.vaoSo,p.gcnNgay,p.gcnCq,p.gcnDc].join("|");let g=grp.find(q=>q.key===key);if(!g&&!p.gcn&&grp.length)g=grp[grp.length-1];if(!g)grp.push(g={key,p,list:[]});g.list.push(p)});
+ const B=[pa("intro",`Những người được hưởng di sản thừa kế của ${names} (Đã chết) để lại gồm có:`)];
+ L.forEach((k,i)=>{const nm=V(k.hoTen);
+  B.push(pa("plain",`${i+1}. ${tt(k)}: ${nm}.${nm.length>=12?"\t":"\t\t"}Sinh ngày: ${V(dmy(k.ngaySinh))}`),pa("plain",`CCCD số: ${V(k.cccd)}.\tNgày cấp: ${V(dmy(k.cccdNgay))}`),pa("plain",`Nơi cấp: ${V(fin(k,"noiCap",NOI[0]))}`),pa("plain",`Địa chỉ thường trú: ${adr(k)}`))});
+ B.push(pa("plain",""),pa("ind","Chúng tôi cùng lập văn bản này để thỏa thuận việc phân chia di sản thừa kế với các nội dung như sau:"),pa("ind",[["1. Về người để lại di sản:",1]]));
+ S.dec.forEach(d=>B.push(pa("ind",`- ${tt(d)} ${V(d.hoTen)} chết ${dt(d.chet)} theo ${V(d.baoTu)} do ${V(d.baoTuNoi)} cấp ngày ${V(dmy(d.baoTuNgay))}.`)));
+ B.push(pa("ind",[["2. Di sản:",1],[` Di sản của ${names} được phân chia trong thỏa thuận này là:`]]));
+ grp.forEach((g,gi)=>{
+  B.push(pa("indl",g.p.gcn?`2.${gi+1}. Quyền sử dụng đất tại Giấy chứng nhận quyền sử dụng đất số ${g.p.gcn}, số vào sổ ${V(g.p.vaoSo)} do ${V(g.p.gcnCq)} cấp ngày ${V(dmy(g.p.gcnNgay))}, địa chỉ thửa đất tại ${V(g.p.gcnDc)} được liệt kê theo bảng sau đây:`:`2.${gi+1}. Quyền sử dụng đất (chưa được cấp Giấy chứng nhận) được liệt kê theo bảng sau đây:`));
+  const rows=g.list.map((p,i)=>{const c=[i+1,p.toCu||p.to,p.thuaCu||p.thua,p.gcnDt||p.dt,p.loaiGcn||p.loai,V(p.thoiHan,"Lâu dài"),p.ghiThem||(p.dtO?`Trong đó có ${p.dtO}m2 đất ở`:"")];let n=0;return K.tblRow.replace(/§/g,()=>xe(c[n++]??""))}).join("");
+  B.push(K.tblPre+K.tblHdr+rows+"</w:tbl>");
+  const rm=g.list.filter(p=>p.thuaCu||p.toCu||p.trichSo);
+  if(rm.length)rm.forEach(p=>B.push(pa("ind",`Riêng thửa đất số ${V(p.thuaCu||p.thua)} tờ bản đồ số ${V(p.toCu||p.to)} được đo đạc lại tại Mảnh trích đo chỉnh lý bản đồ địa chính số ${V(p.trichSo)} do Chi nhánh văn phòng đăng ký đất đai khu vực XVI duyệt ${dt(p.ngDo)} tại thửa đất số ${V(p.thua)} tờ bản đồ số ${V(p.to)}, diện tích ${V(p.dt)} m2. Địa chỉ thửa đất: ${addr(p)}.`)));
+  else B.push(pa("ind",""));
+ });
+ B.push(pa("indl",fin(f,"diChuc","Không có di chúc")==="Có di chúc"?`- ${Cap(names)} có để lại di chúc.`:`- Trước khi chết, ${names} không để lại di chúc và không để lại nghĩa vụ về tài sản nào.`),
+  pa("ind",[["2. Về quan hệ thừa kế và thỏa thuận tài sản chung:",1]]),pa("ind",`Bố mẹ đẻ của ${d0n} đều đã chết trước ${d0n}.`),
+  pa("ind",`${Cap(d0n)} có ${desc}${kidsL.length?`, gồm: ${kidsL.map(k=>V(k.hoTen)).join(", ")}`:""}.`),pa("ind",`${Cap(d0n)} không có cha nuôi, mẹ nuôi và con nuôi.`),
+  pa("ind",[["3. Nội dung thỏa thuận: ",1]]),
+  pa("ind",`- Theo quy định của Pháp luật, người thừa kế di sản của ${names}, gồm ${desc} là ${lt(L)} ${L.map(k=>V(k.hoTen)).join(", ")}.`),
+  pa("ind",`- Bằng văn bản này, chúng tôi, những người tham gia khai nhận di sản thừa kế đồng ý khai nhận thừa kế toàn bộ di sản của ${names} đã nêu trong văn bản.`));
+ if(gift.length)B.push(pa("ind",`- ${Cap(lt(gift))} ${gift.map(g=>V(g.hoTen)).join(", ")}, đồng ý tặng toàn bộ phần thừa kế là quyền sử dụng, quyền sở hữu của mình đối với di sản nêu trên mà mỗi người được hưởng từ ${names} cho ${tl(f)} ${V(f.hoTen)}.`),
+  pa("ind",`- ${Cap(tl(f))} ${V(f.hoTen)} đồng ý tiếp nhận các phần di sản được tặng cho nêu trên, và gộp với phần di sản thừa kế mà ${tl(f)} được hưởng của ${names}, để trở thành người duy nhất thừa kế toàn bộ di sản của ${names} đã nêu trong văn bản.`));
+ B.push(pa("ind",`- Kể từ ngày ký thỏa thuận này, ${tl(f)} ${V(f.hoTen)} được làm các thủ tục để đăng ký quyền sử dụng đối với các thửa đất nêu trên theo đúng quy định của Pháp luật.`),
+  pa("ind",[["*   Quyền và nghĩa vụ của người được hưởng di sản, tài sản:",1]]),
+  pa("ind","- Nhận phần di sản, tài sản mà những người đồng thừa kế, thỏa thuận tài sản chung đã thỏa thuận nhường, cho tặng cùng các giấy tờ có liên quan đến tài sản nêu trên."),
+  pa("ind","-  Hoàn thành thủ tục đăng ký quyền sở hữu và sử dụng đối với tài sản theo quy định của Pháp luật và nộp các khoản thuế, phí, lệ phí liên quan."),
+  pa("ind","-  Đảm bảo thực hiện các nghĩa vụ đã nêu trong văn bản."),
+  pa("ind",[["4.  Cam kết của những người tham gia phân chia di sản:",1]]),pa("ind","Chúng tôi, những người tham gia thỏa thuận phân chia di sản này xin cam đoan:"),
+  pa("ind","- Những thông tin về nhân thân, về di sản và các giấy tờ liên quan đến di sản thừa kế do chúng tôi cung cấp trong Thỏa thuận phân chia di sản này là đúng sự thật."),
+  pa("ind",`- Không bỏ sót, không dấu người thừa kế theo quy định của pháp luật; Ngoài những người thừa kế có tên nêu trong văn bản, ${tl(f)} ${V(f.hoTen)} không còn người thừa kế nào khác. Nếu còn có ai chứng minh được là người thừa kế hợp pháp của ${tl(f)} ${V(f.hoTen)}, thì chúng tôi hoàn toàn liên đới chịu trách nhiệm trước pháp luật, kể cả việc bồi thường bằng tài sản riêng của chúng tôi nếu có thiệt hại xảy ra, và không yêu cầu người chứng thực văn bản này phải chịu trách nhiệm gì về những việc này. `),
+  pa("ind","- Không ai trong chúng tôi có bất cứ hành vi nào dẫn đến việc bị truất quyền thừa kế theo quy định của Pháp luật."),
+  pa("ind","- Di sản nêu trên không bị tranh chấp, không bị kê biên hoặc thu hồi theo quyết định của cơ quan nhà nước có thẩm quyền mà chủ sở hữu/sử dụng chưa chấp hành, và không được dùng để đảm bảo một nghĩa vụ nào khác."),
+  pa("ind","- Thỏa thuận này do chúng tôi tự nguyện lập và việc phân chia, cho tặng di sản thừa kế nêu trên không nhằm trốn tránh việc thực hiện nghĩa vụ tài sản nào của bất cứ ai trong số chúng tôi. "),
+  pa("ind","- Chúng tôi đã tự đọc/nghe đọc lại toàn bộ văn bản, đã hiểu rõ nội dung và trách nhiệm của mình khi lập văn bản và cùng tự nguyện ký tên/ điểm chỉ dưới đây để làm bằng chứng."));
+ x=x.replace("<w:p><w:r><w:t>@@BODY@@</w:t></w:r></w:p>",B.join(""));
+ z.remove("protos.json");z.file("word/document.xml",x);
+ return z.generateAsync({type:"blob",mimeType:"application/vnd.openxmlformats-officedocument.wordprocessingml.document"});
+}
+async function exportDocs(k){
+  const msg=document.getElementById("msg"),say=t=>msg.textContent=t;
+  if(!window.docx){say("Chưa tải được thư viện tạo Word, hãy kiểm tra mạng rồi thử lại.");return}
+  const who=(S.f.hoTen||"ho-so").replace(/[\\/:*?"<>|]/g,"").trim(),ks=k==="all"?DOCS.map(d=>d[0]):[k];
+  try{
+    const g=G();say("Đang tạo file…");
+    const out=[];for(const x of ks)out.push([`${DOCS.find(d=>d[0]===x)[1].replace(/[\\/:*?"<>|–]/g,"").trim()} - ${who}.docx`,await(x==="tk"?tkTpl().catch(e=>{console.warn(e);return g.mk(x)}):g.mk(x))]);
+    if(k==="all"){const z=new JSZip();out.forEach(([n,b])=>z.file(n,b));saveFile(`Bo ho so - ${who}.zip`,await z.generateAsync({type:"blob"}))}
+    else saveFile(out[0][0],out[0][1]);
+    say("Đã tạo file, kiểm tra thư mục Tải xuống.");
+  }catch(x){say("Không tạo được file: "+(x?.message||x))}
+}
+render();
+</script>
+</body>
+</html>
